@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PHPDIDefinitions\Clue\Redis\Client;
 
@@ -26,14 +26,9 @@ final class WaitingClient implements Client
      */
     private $callQueue;
 
-    public static function create(LoopInterface $loop, string $dsn, LoggerInterface $logger = null): self
-    {
-        return new self(new Factory($loop), $dsn, $logger ?? new NullLogger());
-    }
-
     /**
-     * @param Factory $factory
-     * @param string $dsn
+     * @param Factory         $factory
+     * @param string          $dsn
      * @param LoggerInterface $logger
      *
      * @internal
@@ -72,6 +67,11 @@ final class WaitingClient implements Client
         ]);
 
         return $deferred->promise();
+    }
+
+    public static function create(LoopInterface $loop, string $dsn, LoggerInterface $logger = null): self
+    {
+        return new self(new Factory($loop), $dsn, $logger ?? new NullLogger());
     }
 
     public function end()

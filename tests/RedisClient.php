@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PHPDIDefinitions\Tests\Clue\Redis\Client;
 
@@ -9,14 +9,13 @@ class RedisClient implements Client
 {
     use EventEmitterTrait;
 
-    public function incr(...$args)
-    {
-
-    }
-
     public function __call($name, $args)
     {
         // TODO: Implement __call() method.
+    }
+
+    public function incr(...$args)
+    {
     }
 
     public function end()
