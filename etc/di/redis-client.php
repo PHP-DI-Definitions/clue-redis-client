@@ -6,7 +6,8 @@ use Psr\Log\LoggerInterface;
 use React\EventLoop\LoopInterface;
 
 return [
-    Client::class => function (LoopInterface $loop, string $dsn, LoggerInterface $logger = null) {
+    Client::class => \DI\factory(function (LoopInterface $loop, string $dsn, LoggerInterface $logger = null) {
         return WaitingClient::create($loop, $dsn, $logger);
-    },
+    })
+        ->parameter('dsn', \DI\get('config.redis.dsn')),
 ];
