@@ -1,5 +1,6 @@
 {
     "name": "php-di-definitions/clue-redis-client",
+    "license": "MIT",
     "description": "PHP-DI definition for clue/redis-react",
     "require": {
         "php": "^7.2",
