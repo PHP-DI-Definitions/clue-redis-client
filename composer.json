@@ -9,7 +9,8 @@
         "wyrihaximus/psr-3-callable-throwable-logger": "^1.0"
     },
     "require-dev": {
-        "api-clients/test-utilities": "^5.1"
+        "api-clients/test-utilities": "^5.1",
+        "php-di/php-di": "^6.0"
     },
     "autoload": {
         "psr-4": {
