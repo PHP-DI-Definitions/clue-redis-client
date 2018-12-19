@@ -4,12 +4,11 @@
     "description": "PHP-DI definition for clue/redis-react",
     "require": {
         "php": "^7.2",
-        "clue/redis-react": "^2.2",
-        "psr/log": "^1.0",
-        "wyrihaximus/psr-3-callable-throwable-logger": "^1.0"
+        "wyrihaximus/react-redis-waiting-client": "dev-master"
     },
     "require-dev": {
-        "api-clients/test-utilities": "^5.1"
+        "api-clients/test-utilities": "^5.1",
+        "php-di/php-di": "^6.0"
     },
     "autoload": {
         "psr-4": {

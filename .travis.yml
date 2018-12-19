@@ -8,93 +8,37 @@ cache:
 ## Build matrix for lowest and highest possible targets
 matrix:
   include:
-    - php: 7.1
+    - php: 7.2
       env:
         - qaExtended=true
-    - php: 7.2
+        - dropPlatform=false
+    - php: 7.3
       env:
         - dropPlatform=false
-    - php: 7.3snapshot
-      env:
-        - dropPlatform=false
-      dist: xenial
-      sudo: required
-      addons:
-       apt:
-        packages:
-          - libzip4
-    - php: 7.3.0RC1
-      env:
-        - dropPlatform=false
-      dist: xenial
-      sudo: required
-      addons:
-       apt:
-        packages:
-          - libzip4
     - php: nightly
       env:
         - dropPlatform=false
-    - php: 7.1
-      env:
-        - dependencies=lowest
-        - dropPlatform=false
     - php: 7.2
       env:
         - dependencies=lowest
         - dropPlatform=false
-    - php: 7.3snapshot
+    - php: 7.3
       env:
         - dependencies=lowest
         - dropPlatform=false
-      dist: xenial
-      sudo: required
-      addons:
-       apt:
-        packages:
-          - libzip4
-    - php: 7.3.0RC1
-      env:
-        - dependencies=lowest
-        - dropPlatform=false
-      dist: xenial
-      sudo: required
-      addons:
-       apt:
-        packages:
-          - libzip4
+
     - php: nightly
       env:
         - dependencies=lowest
         - dropPlatform=false
-    - php: 7.1
-      env:
-        - dependencies=highest
-        - dropPlatform=false
     - php: 7.2
       env:
         - dependencies=highest
         - dropPlatform=false
-    - php: 7.3snapshot
+    - php: 7.3
       env:
         - dependencies=highest
         - dropPlatform=false
-      dist: xenial
-      sudo: required
-      addons:
-       apt:
-        packages:
-          - libzip4
-    - php: 7.3.0RC1
-      env:
-        - dependencies=highest
-        - dropPlatform=false
-      dist: xenial
-      sudo: required
-      addons:
-       apt:
-        packages:
-          - libzip4
     - php: nightly
       env:
         - dependencies=highest
