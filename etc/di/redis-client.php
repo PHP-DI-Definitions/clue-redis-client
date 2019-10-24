@@ -3,10 +3,11 @@
 use Clue\React\Redis\Client;
 use Clue\React\Redis\Factory;
 use React\EventLoop\LoopInterface;
+use React\Socket\ConnectorInterface;
 
 return [
-    Client::class => \DI\factory(function (LoopInterface $loop, string $dsn) {
-        return (new Factory($loop))->createLazyClient($dsn);
+    Client::class => \DI\factory(function (LoopInterface $loop, ConnectorInterface $connector, string $dsn) {
+        return (new Factory($loop, $connector))->createLazyClient($dsn);
     })
         ->parameter('dsn', \DI\get('config.redis.dsn')),
 ];
