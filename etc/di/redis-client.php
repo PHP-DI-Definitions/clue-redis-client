@@ -10,4 +10,12 @@ return [
         return (new Factory($loop, $connector))->createLazyClient($dsn);
     })
         ->parameter('dsn', \DI\get('config.redis.dsn')),
+    'redis.client.read' => \DI\factory(function (LoopInterface $loop, ConnectorInterface $connector, string $dsn) {
+        return (new Factory($loop, $connector))->createLazyClient($dsn);
+    })
+        ->parameter('dsn', \DI\get('config.redis.read.dsn')),
+    'redis.client.write' => \DI\factory(function (LoopInterface $loop, ConnectorInterface $connector, string $dsn) {
+        return (new Factory($loop, $connector))->createLazyClient($dsn);
+    })
+        ->parameter('dsn', \DI\get('config.redis.write.dsn')),
 ];
